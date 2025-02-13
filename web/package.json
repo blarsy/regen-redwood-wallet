@@ -14,6 +14,7 @@
     "@keplr-wallet/types": "^0.12.185",
     "@mui/material": "^6.4.4",
     "@regen-network/api": "^1.0.0-alpha6",
+    "cosmjs-utils": "^0.1.0",
     "formik": "^2.4.6",
     "next": "15.1.7",
     "react": "^19.0.0",
