@@ -17,7 +17,7 @@ const CoinBalance = (p: { balance: RedwoodBalance }) => {
         prettifiedCoin = p.balance.coin
     }
 
-    return <Stack sx={{ gap: '2rem' }}>
+    return <Stack sx={{ gap: '2rem', alignItems: 'center' }}>
         <Typography variant="subtitle1" textAlign="center">{`Wallet ${first15(p.balance.key.bech32Address)}`}</Typography>
         <Stack direction="row" sx={{ minWidth: '250px', justifyContent: 'space-between', alignItems:'center' }}>
             <Typography variant="body1">{prettifiedCoin.denom}</Typography>
@@ -32,7 +32,10 @@ const CoinBalance = (p: { balance: RedwoodBalance }) => {
                 }
             }}/>
         </Stack>
-        { successMessage && <Alert severity="success" onClose={() => setSuccessMessage('')}>{successMessage}</Alert> }
+        { successMessage && <Alert severity="success" onClose={() => setSuccessMessage('')}>
+            <Typography variant="body2">{successMessage}</Typography>
+            <Typography variant="body2">Refresh your balances in several seconds to check if the transfer has processed.</Typography>
+        </Alert> }
     </Stack>
 }
 
